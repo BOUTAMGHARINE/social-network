@@ -5,6 +5,7 @@
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
+  "logout": "button-module__Y1ifZq__logout",
 });
 }}),
 "[project]/src/elements/buttonLogout/button.jsx [app-client] (ecmascript)": ((__turbopack_context__) => {
@@ -28,7 +29,19 @@ function ButtonLogout() {
         onClick: ()=>{
             console.log("Logout");
         },
-        children: "Logout"
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+            src: "/images/logout.png",
+            alt: "Logout",
+            title: "Logout",
+            style: {
+                width: "40px",
+                height: "40px"
+            }
+        }, void 0, false, {
+            fileName: "[project]/src/elements/buttonLogout/button.jsx",
+            lineNumber: 12,
+            columnNumber: 13
+        }, this)
     }, void 0, false, {
         fileName: "[project]/src/elements/buttonLogout/button.jsx",
         lineNumber: 7,

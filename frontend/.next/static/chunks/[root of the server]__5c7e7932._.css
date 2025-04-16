@@ -209,7 +209,7 @@
 
 /* [project]/src/app/globals.css [app-client] (css) */
 :root {
-  --color-primary: #080;
+  --color-primary: #06d6a0;
   --color-secondary: #eee;
 }
 
@@ -254,24 +254,24 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-}
-
-.navbar-module__6qiM_q__links {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  height: 100px;
 }
 
 
 /* [project]/src/elements/buttonLogout/button.module.css [app-client] (css) */
-
+.button-module__Y1ifZq__logout {
+  background-color: #0000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
 
 /* [project]/src/elements/logo/logo.module.css [app-client] (css) */
 .logo-module__5Y7CTW__logo {
   font-weight: bold;
   font-size: 24px;
+  color: var(--color-primary);
 }
 
 
