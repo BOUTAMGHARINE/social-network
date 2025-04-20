@@ -1,0 +1,3 @@
+{
+  "/(dynamic)/profile/[id]/page": "app/(dynamic)/profile/[id]/page.js"
+}

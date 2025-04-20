@@ -10,7 +10,13 @@
 .post-module__epbfUq__header {
   display: flex;
   align-items: center;
+  justify-content: start;
   width: 100%;
+}
+
+.post-module__epbfUq__header .post-module__epbfUq__containerHeader {
+  display: flex;
+  align-items: center;
 }
 
 .post-module__epbfUq__imageContainer {
