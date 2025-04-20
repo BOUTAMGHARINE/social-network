@@ -122,7 +122,7 @@ function LikeDislikeComment() {
                         onChange: (e)=>setComment(e.target.value),
                         rows: 2,
                         style: {
-                            width: '80%',
+                            width: '90%',
                             padding: '5px',
                             borderRadius: '4px',
                             resize: 'none'
@@ -137,14 +137,16 @@ function LikeDislikeComment() {
                         style: {
                             marginTop: '0px',
                             marginLeft: '5px',
-                            padding: '6px 12px',
-                            backgroundColor: '#0070f3',
+                            width: '10%',
+                            padding: '14px 12px',
+                            backgroundColor: 'var(--color-primary)',
                             color: 'white',
+                            fontWeight: 'bold',
                             border: 'none',
                             borderRadius: '4px',
                             cursor: 'pointer'
                         },
-                        children: "Submit Comment"
+                        children: "Send"
                     }, void 0, false, {
                         fileName: "[project]/src/components/likeDislikeComment/likeDislikeComment.jsx",
                         lineNumber: 55,
@@ -168,20 +170,20 @@ function LikeDislikeComment() {
                         children: "Comment:"
                     }, void 0, false, {
                         fileName: "[project]/src/components/likeDislikeComment/likeDislikeComment.jsx",
-                        lineNumber: 75,
+                        lineNumber: 77,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: submittedComment
                     }, void 0, false, {
                         fileName: "[project]/src/components/likeDislikeComment/likeDislikeComment.jsx",
-                        lineNumber: 76,
+                        lineNumber: 78,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/likeDislikeComment/likeDislikeComment.jsx",
-                lineNumber: 74,
+                lineNumber: 76,
                 columnNumber: 9
             }, this)
         ]
