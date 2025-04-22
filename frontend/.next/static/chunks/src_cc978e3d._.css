@@ -82,11 +82,16 @@
 
 /* [project]/src/components/post/post.module.css [app-client] (css) */
 .post-module__epbfUq__container {
+  border: 2px solid #333;
+  padding: 20px;
+}
+
+.post-module__epbfUq__container .post-module__epbfUq__post {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #333;
 }
 
 .post-module__epbfUq__header {
@@ -123,15 +128,17 @@
 }
 
 .post-module__epbfUq__imagePost {
-  width: 95%;
-  min-height: 300px;
-  position: relative;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .post-module__epbfUq__imagePost .post-module__epbfUq__image {
   object-fit: cover;
   border-radius: 7px;
+  width: 95%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-module__epbfUq__reaction {
@@ -139,6 +146,8 @@
   justify-content: space-between;
   align-items: center;
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-module__epbfUq__reaction .post-module__epbfUq__dislike {

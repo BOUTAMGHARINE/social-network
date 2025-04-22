@@ -1,0 +1,3 @@
+{
+  "/(dynamic)/blog/[post]/page": "app/(dynamic)/blog/[post]/page.js"
+}
