@@ -258,7 +258,7 @@ function CreatePost() {
                             className: "imageProfile"
                         }, void 0, false, {
                             fileName: "[project]/src/components/createPost/createPost.jsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -268,7 +268,7 @@ function CreatePost() {
                                     children: "full name"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                                    lineNumber: 50,
+                                    lineNumber: 51,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -284,7 +284,7 @@ function CreatePost() {
                                             children: "Public"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/createPost/createPost.jsx",
-                                            lineNumber: 52,
+                                            lineNumber: 53,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -292,7 +292,7 @@ function CreatePost() {
                                             children: "Private"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/createPost/createPost.jsx",
-                                            lineNumber: 53,
+                                            lineNumber: 54,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -300,25 +300,25 @@ function CreatePost() {
                                             children: "Almost Private "
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/createPost/createPost.jsx",
-                                            lineNumber: 54,
+                                            lineNumber: 55,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                                    lineNumber: 51,
+                                    lineNumber: 52,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/createPost/createPost.jsx",
-                            lineNumber: 49,
+                            lineNumber: 50,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                    lineNumber: 38,
+                    lineNumber: 39,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,12 +332,12 @@ function CreatePost() {
                         placeholder: "enter your title"
                     }, void 0, false, {
                         fileName: "[project]/src/components/createPost/createPost.jsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                    lineNumber: 58,
+                    lineNumber: 59,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -362,12 +362,12 @@ function CreatePost() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/createPost/createPost.jsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                    lineNumber: 61,
+                    lineNumber: 62,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -380,12 +380,12 @@ function CreatePost() {
                         name: "image"
                     }, void 0, false, {
                         fileName: "[project]/src/components/createPost/createPost.jsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                    lineNumber: 72,
+                    lineNumber: 73,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -395,23 +395,23 @@ function CreatePost() {
                         value: "Publish"
                     }, void 0, false, {
                         fileName: "[project]/src/components/createPost/createPost.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/createPost/createPost.jsx",
-                    lineNumber: 75,
+                    lineNumber: 76,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/createPost/createPost.jsx",
-            lineNumber: 37,
+            lineNumber: 38,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/createPost/createPost.jsx",
-        lineNumber: 36,
+        lineNumber: 37,
         columnNumber: 9
     }, this);
 }
