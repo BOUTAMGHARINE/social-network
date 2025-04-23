@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "app": {
     "[project]/src/app/(dynamic)/profile/[id]/page": [
@@ -23,3 +24,6 @@
   "pages": {},
   "pagesUsingSizeAdjust": false
 }
+=======
+{"pages":{},"app":{},"appUsingSizeAdjust":false,"pagesUsingSizeAdjust":false}
+>>>>>>> origin/mergeFront
