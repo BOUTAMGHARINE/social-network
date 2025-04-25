@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // File: /home/walid/Desktop/social-network/Social-Network/frontend/src/app/page.jsx
-=======
-// File: C:\Users\ASUS\Desktop\SNMF\Social-Network\frontend\src\app\page.jsx
->>>>>>> origin/mergeFront
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
