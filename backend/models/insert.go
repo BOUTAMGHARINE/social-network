@@ -78,3 +78,9 @@ func InsserMemmberInGroupe(Groupe_id, User_id int) error {
 	_, err := Db.Exec(Quirie, Groupe_id, User_id)
 	return err
 }
+func SaveInvitation(Groupe_id,sender_id,resever_id int)error{
+	Quirie := "INSER INTO invitation (sender_id,recever_id,groupe_id) VALUES(?,?)"
+	_,err := Db.Exec(Quirie,sender_id,resever_id,Groupe_id)
+	return err
+}
+

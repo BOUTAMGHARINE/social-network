@@ -112,17 +112,17 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 		utils.WriteJSON(w, map[string]string{"error": "alredy invited"}, 409)
 		return
 	}
-	models.SaveInvitation(invitaion.GroupID,invitaion.InvitedBy,invitaion.UserId)
+	err := models.SaveInvitation(invitaion.GroupID,invitaion.InvitedBy,invitaion.UserId)
+	if err != nil {
+		utils.WriteJSON(w, map[string]string{"error": "Internal Server Error"}, http.StatusInternalServerError)
+		return
+	}
+
+
 	
 
 
-	inv := models.Invitation{
-		GroupID:   groupID,
-		InvitedBy: currentUserID,
-		Email:     input.Email,
-		Status:    "pending",
-		CreatedAt: time.Now()
-	}
+
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(map[string]string{"message": "Invitation sent"})
