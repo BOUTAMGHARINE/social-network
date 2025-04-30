@@ -73,9 +73,9 @@ type Groupe_member struct {
 	Groupe_id int `json:"groupe_id"`
 }
 type GroupInvitation struct {
-	GroupID   int
-	InvitedBy int
-	UserId    int
+	GroupID   int `json:"groupe_id"`
+	InvitedBy int `json:"invited_By"`
+	UserId    int `json:"invited"`
 	CreatedAt time.Time
 }
-type 
+

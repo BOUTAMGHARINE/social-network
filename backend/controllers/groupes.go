@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"time"
-
 	"social-network/models"
 	utils "social-network/utils"
 )
@@ -80,8 +78,7 @@ func SearchGroupsHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		utils.WriteJSON(w, map[string]string{"error": "Method Not Allowd"}, http.StatusMethodNotAllowed)
 		return
-
-	}
+}
 	query := r.URL.Query().Get("query")
 	groups, err := models.SearchGroupsInDatabase(query)
 	if err != nil {
@@ -119,7 +116,8 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 	}
 
 
-	
+
+
 
 
 
