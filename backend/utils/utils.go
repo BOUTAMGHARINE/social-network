@@ -1,5 +1,7 @@
 package utils
 
+import "time"
+
 // import "time"
 
 type Regester struct {
@@ -45,15 +47,15 @@ type NewGroup struct {
 }
 
 type User struct {
-	ID         int64
-	Nickname   string `json:"nickname"`
-	Age        uint8  `json:"age"`
-	Gender     string `json:"gender"`
-	FirstName  string `json:"firstname"`
-	LastName   string `json:"lastname"`
-	Email      string `json:"email"`
-	Password   string `json:"password"`
-	SessionId  string
+	ID        int64
+	Nickname  string `json:"nickname"`
+	Age       uint8  `json:"age"`
+	Gender    string `json:"gender"`
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
+	Email     string `json:"email"`
+	Password  string `json:"password"`
+	SessionId string
 }
 type Session struct {
 	Id        int    `json:"id"`
@@ -61,3 +63,19 @@ type Session struct {
 	Token     string `json:"token"`
 	CreatedAt string `json:"created_at"`
 }
+type Groupe struct {
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	CreatorId   int    `json:"cretorid"`
+}
+type Groupe_member struct {
+	User_id   int `json:"user_id"`
+	Groupe_id int `json:"groupe_id"`
+}
+type GroupInvitation struct {
+	GroupID   int
+	InvitedBy int
+	UserId    int
+	CreatedAt time.Time
+}
+type 

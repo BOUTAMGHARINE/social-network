@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+
 	"social-network/utils"
 )
 
@@ -13,6 +14,12 @@ func InsertUser(user utils.Regester) error {
 	}
 	return nil
 }
+func InsertFriends(id int, friendes []string) {
+	insertFriend := "INSERT INTO friends (post_id, friend_id) VALUES(?,?)"
+	for _, friend := range friendes {
+		Db.Exec(insertFriend, id, friend)
+	}
+}
 
 func InsertPost(post utils.Post) (int, error) {
 	insetpostQuery := "INSERT INTO posts (post_privacy, title, content, user_id, imagePath, createdAt) VALUES (?,?,?,?,?,strftime('%s', 'now'))"
@@ -22,13 +29,6 @@ func InsertPost(post utils.Post) (int, error) {
 	}
 	lastId, _ := res.LastInsertId()
 	return int(lastId), nil
-}
-
-func InsertFriends(id int, friendes []string) {
-	insertFriend := "INSERT INTO friends (post_id, friend_id) VALUES(?,?)"
-	for _, friend := range friendes {
-		Db.Exec(insertFriend, id, friend)
-	}
 }
 
 func InserOrUpdate(follower, followed string) (string, error) {
@@ -59,33 +59,22 @@ func insertFollow(follower, followed string) error {
 }
 
 func InsertFollowreq(followed string) {
-
 }
 
-func InsertNewGroup(group *utils.NewGroup, user_id int) error {
-	insertGroup := "INSERT INTO groups (name, description, group_oner) VALUES (?,?,?)"
-	res, err := Db.Exec(insertGroup, group.Title, group.Content, user_id)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-	lastId, _ := res.LastInsertId()
-	group.Id = int(lastId)
-	return nil
-}
-
-func InsertMumber(group_id, user_id int) error {
-	insertMumber := "INSERT INTO group_members (group_id, user_id) VALUES (?,?)"
-	if _, err := Db.Exec(insertMumber, group_id, user_id); err != nil {
-		fmt.Println(err)
-		return err
-	}
-	fmt.Println("user added")
-	return nil
-}
-
-
-func InsertSession( userData *utils.User) error {
+func InsertSession(userData *utils.User) error {
 	_, err := Db.Exec("INSERT INTO sessions ( user_id, token) VALUES (?, ?)", userData.ID, userData.SessionId)
+	return err
+}
+
+func InsserGroupe(title, description string, creator_id int) error {
+	Query := "INSERT INTO groups (title,description,creatorId) VALUES (?,?,?)"
+	_, err := Db.Exec(Query, title, description, creator_id)
+	return err
+}
+
+// InsserMemmberInGroupe(requist.Groupe_id,requist.User_id)
+func InsserMemmberInGroupe(Groupe_id, User_id int) error {
+	Quirie := "INSERT INTO group_members (groupe_id,user_id) VALUES (?,?)"
+	_, err := Db.Exec(Quirie, Groupe_id, User_id)
 	return err
 }
