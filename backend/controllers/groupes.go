@@ -129,10 +129,21 @@ func Get_all_post(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	groupe_id_str := r.FormValue("groupe_id")
-	groupe_id, err := strconv.Atoi(groupe_id_str)
-	if err !=nil{
+	user_id_str := r.FormValue("user_id")
+	groupe_id, err1 := strconv.Atoi(groupe_id_str)
+	user_id ,err2 := strconv.Atoi(user_id_str)
+
+	if err1 !=nil || err2 != nil{
 		
 		utils.WriteJSON(w, map[string]string{"error": "Status BadRequest"}, http.StatusBadRequest)
+		return 
+
+	}
+
+	if !models.IsMember(groupe_id,user_id) {
+		utils.WriteJSON(w, map[string]string{"error": "Access denied: you must be a member of the group to view posts."}, http.StatusBadRequest)
+		return
+		
 
 	}
 
