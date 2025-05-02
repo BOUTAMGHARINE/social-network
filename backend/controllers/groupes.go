@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
+
 	"social-network/models"
 	utils "social-network/utils"
 )
@@ -78,7 +80,7 @@ func SearchGroupsHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		utils.WriteJSON(w, map[string]string{"error": "Method Not Allowd"}, http.StatusMethodNotAllowed)
 		return
-}
+	}
 	query := r.URL.Query().Get("query")
 	groups, err := models.SearchGroupsInDatabase(query)
 	if err != nil {
@@ -109,38 +111,40 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 		utils.WriteJSON(w, map[string]string{"error": "alredy invited"}, 409)
 		return
 	}
-	err := models.SaveInvitation(invitaion.GroupID,invitaion.InvitedBy,invitaion.UserId)
+	err := models.SaveInvitation(invitaion.GroupID, invitaion.InvitedBy, invitaion.UserId)
 	if err != nil {
 		utils.WriteJSON(w, map[string]string{"error": "Internal Server Error"}, http.StatusInternalServerError)
 		return
 	}
 
-	// send invitation by websoket 
-
-
-
-
-
-
-
+	// send invitation by websoket
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(map[string]string{"message": "Invitation sent"})
 }
-func Get_all_post(w http.ResponseWriter, r *http.Request){
 
-
+func Get_all_post(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		utils.WriteJSON(w, map[string]string{"error": "Method Not Allowd"}, http.StatusMethodNotAllowed)
 		return
 	}
-	groupe_id := r.FormValue("groupe_id")
+	groupe_id_str := r.FormValue("groupe_id")
+	groupe_id, err := strconv.Atoi(groupe_id_str)
+	if err !=nil{
+		
+		utils.WriteJSON(w, map[string]string{"error": "Status BadRequest"}, http.StatusBadRequest)
 
-	Posts := models.Get_Postes(groupe_id)
+	}
 
+	Posts := models.QueryPosts()
+	var Posts_groupe []utils.Post
+	for _, v := range Posts {
+		if v.Groupe_id == groupe_id {
 
+			Posts_groupe = append(Posts_groupe,v )
 
+		}
+	}
 
-    
-
+	utils.WriteJSON(w, Posts_groupe, http.StatusOK)
 }

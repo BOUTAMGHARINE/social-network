@@ -7,7 +7,7 @@ import (
 	"social-network/utils"
 )
 
-func QueryPosts(offset int) []utils.Post {
+func QueryPosts() []utils.Post {
 	var posts []utils.Post
 	queryPosts := `SELECT * FROM posts`
 

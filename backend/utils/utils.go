@@ -32,6 +32,7 @@ type Post struct {
 	Friendes  []string  `json:"friends"`
 	CreatedAt int       `json:"createdAt"`
 	Reactions Reactions `json:"reaction"`
+	Groupe_id int       `json:"groupe_id"`
 }
 
 type Reactions struct {
@@ -87,4 +88,3 @@ type Posts_groupe struct {
 	CreatedAt int       `json:"createdAt"`
 	Reactions Reactions `json:"reaction"`
 }
-
