@@ -131,19 +131,18 @@ func Get_all_post(w http.ResponseWriter, r *http.Request) {
 	groupe_id_str := r.FormValue("groupe_id")
 	user_id_str := r.FormValue("user_id")
 	groupe_id, err1 := strconv.Atoi(groupe_id_str)
-	user_id ,err2 := strconv.Atoi(user_id_str)
+	user_id, err2 := strconv.Atoi(user_id_str)
 
-	if err1 !=nil || err2 != nil{
-		
+	if err1 != nil || err2 != nil {
+
 		utils.WriteJSON(w, map[string]string{"error": "Status BadRequest"}, http.StatusBadRequest)
-		return 
+		return
 
 	}
 
-	if !models.IsMember(groupe_id,user_id) {
+	if !models.IsMember(groupe_id, user_id) {
 		utils.WriteJSON(w, map[string]string{"error": "Access denied: you must be a member of the group to view posts."}, 403)
 		return
-		
 
 	}
 
@@ -151,11 +150,82 @@ func Get_all_post(w http.ResponseWriter, r *http.Request) {
 	var Posts_groupe []utils.Post
 	for _, v := range Posts {
 		if v.Groupe_id == groupe_id {
-
-			Posts_groupe = append(Posts_groupe,v )
-
+			Posts_groupe = append(Posts_groupe, v)
 		}
 	}
 
 	utils.WriteJSON(w, Posts_groupe, http.StatusOK)
 }
+
+// func Vreat_Post(w http.ResponseWriter, r *http.Request) {
+// 	if r.Method != http.MethodPost {
+// 		utils.WriteJSON(w, map[string]string{"error": "Method Not Allowd"}, http.StatusMethodNotAllowed)
+// 		return
+// 	}
+// 	var Post utils.Post
+// 	err := json.NewDecoder(r.Body).Decode(&Post)
+// 	if err != nil {
+
+// 		utils.WriteJSON(w, map[string]string{"error": "Bad Request"}, http.StatusBadRequest)
+// 		return
+
+// 	}
+	func AddPost(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			utils.WriteJSON(w, map[string]string{"error": "Method Not allowd"}, http.StatusMethodNotAllowed)
+			return
+		}
+	
+		host := r.Host
+		postData := r.FormValue("postData")
+		filepath, err := utils.UploadImage(r)
+		if err != nil {
+			utils.WriteJSON(w, map[string]string{"error": err.Error()}, http.StatusInternalServerError)
+			fmt.Println("Upload Image error:", err)
+			return
+		}
+	
+		var post utils.Post
+		fmt.Println("post data", postData)
+		err = json.Unmarshal([]byte(postData), &post)
+		if err != nil {
+			utils.WriteJSON(w, map[string]string{"error": "internal server error\nparsing post"}, http.StatusInternalServerError)
+			fmt.Println("unmarshal err:", err)
+			return
+		}
+	
+		if filepath != "" {
+			post.Image = filepath
+		}
+	
+		post.Id, err = models.InsertPost(post)
+		if err != nil {
+			utils.WriteJSON(w, map[string]string{"error": "internal server error\ninserting post"}, http.StatusInternalServerError)
+			return
+		}
+	
+		if len(post.Friendes) != 0 {
+			models.InsertFriends(2, post.Friendes)
+			post.Friendes = []string{}
+		}
+	
+		if filepath != "" {
+			post.Image = host + filepath
+		}
+		if filepath != "" {
+			post.Image = host + filepath[1:]
+		}
+		utils.WriteJSON(w, post, 200)
+	}
+
+	func Creat_Event(w http.ResponseWriter, r *http.Request){
+		if r.Method != http.MethodPost {
+			utils.WriteJSON(w, map[string]string{"error": "Method Not allowd"}, http.StatusMethodNotAllowed)
+			return
+		}
+	
+
+
+	}
+
+
