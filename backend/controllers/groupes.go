@@ -141,7 +141,7 @@ func Get_all_post(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if !models.IsMember(groupe_id,user_id) {
-		utils.WriteJSON(w, map[string]string{"error": "Access denied: you must be a member of the group to view posts."}, http.StatusBadRequest)
+		utils.WriteJSON(w, map[string]string{"error": "Access denied: you must be a member of the group to view posts."}, 403)
 		return
 		
 
