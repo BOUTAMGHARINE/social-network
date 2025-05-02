@@ -78,4 +78,13 @@ type GroupInvitation struct {
 	UserId    int `json:"invited"`
 	CreatedAt time.Time
 }
+type Posts_groupe struct {
+	Id        int       `json:"id"`
+	Poster    int       `json:"poster"`
+	Title     string    `json:"title"`
+	Content   string    `json:"content"`
+	Image     string    `json:"image"`
+	CreatedAt int       `json:"createdAt"`
+	Reactions Reactions `json:"reaction"`
+}
 

@@ -41,6 +41,7 @@ func main() {
 	http.HandleFunc("POST /api/logout", controllers.LogoutHandler)
 	http.HandleFunc("/CreatGroupe", controllers.Creat_groupe)
 	http.HandleFunc("/JouindGroupe", controllers.Jouind_Groupe)
+	
 	fmt.Println("server runing at http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 

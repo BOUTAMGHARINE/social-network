@@ -115,6 +115,8 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 		return
 	}
 
+	// send invitation by websoket 
+
 
 
 
@@ -124,4 +126,21 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(map[string]string{"message": "Invitation sent"})
+}
+func Get_all_post(w http.ResponseWriter, r *http.Request){
+
+
+	if r.Method != http.MethodPost {
+		utils.WriteJSON(w, map[string]string{"error": "Method Not Allowd"}, http.StatusMethodNotAllowed)
+		return
+	}
+	groupe_id := r.FormValue("groupe_id")
+
+	Posts := models.Get_Postes(groupe_id)
+
+
+
+
+    
+
 }
