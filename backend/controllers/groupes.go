@@ -117,7 +117,6 @@ func InviteUser(w http.ResponseWriter, r *http.Request, groupID uint) {
 		return
 	}
 
-	// send invitation by websoket
 
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(map[string]string{"message": "Invitation sent"})
