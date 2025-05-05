@@ -185,6 +185,7 @@ func IsMember(groupID, userID int) bool {
 
 	return false
 }
+
 func InvitationExists(groupe_id,recever_id int)bool{
 	query:="SELECT 1 FROM invitation WHERE  groupe_id=? AND  recever_id=?"
 	rows, err := Db.Query(query,groupe_id, recever_id)

@@ -211,9 +211,6 @@ func Get_all_post(w http.ResponseWriter, r *http.Request) {
 		if filepath != "" {
 			post.Image = host + filepath
 		}
-		if filepath != "" {
-			post.Image = host + filepath[1:]
-		}
 		utils.WriteJSON(w, post, 200)
 	}
 
